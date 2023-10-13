@@ -2,6 +2,10 @@ import { useState } from 'react'
 import './App.css'
 import styled from 'styled-components'
 import Cookies from 'universal-cookie';
+import Logos from './assets/logo.png';
+
+
+
 const Maindiv = styled.div`
 display: flex;
 flex-direction: column;
@@ -78,6 +82,7 @@ function TougleRadioButton(text, thee){
   )
 }
 function App() {
+  const [seeCookie, setCookie] = useState(true);
   let status = cookies.get("Score");
   if( status != null || status != undefined || status != ""){
     score = cookies.get("Score")
@@ -89,13 +94,23 @@ function App() {
     return TougleRadioButton(value.text, value.thee)
   })
  
-
+  function cookieNotification() {
+    function handleClick() {
+      setCookie(false)
+    }
+    if(seeCookie){ 
+      return(
+      <div id="cookie_notification">
+      <p>Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</p>
+      <button className={"button cookie_accept"} onClick={handleClick}>Принять</button>
+      <img className={"Logoimg"}  src={Logos}/>
+    </div>)
+   }
+  }
   return (
     <div>
-      <div id="cookie_notification">
-        <p>Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</p>
-        <button className={"button cookie_accept"}>Принять</button>
-      </div>
+      {cookieNotification()}
+     
       <Maindiv> 
         <h1>Score {score}</h1>
         {renderList}

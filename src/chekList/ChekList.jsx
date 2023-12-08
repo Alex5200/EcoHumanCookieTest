@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import CygreBlack from '../assets/fonts/Cygre-Black.ttf'
 import CygreExtraBold from '../assets/fonts/Cygre-ExtraBoldIt.ttf';
 import Gilroy from '../assets/fonts/Gilroy-Medium.ttf'
-import LogoRed from '../assets/logored.png';
 import "./ChekList.scss"
 import {privichki} from './privichki'
+import Header from '../header/header';
+
 
 const ChekListHabits = styled.div`
     color: #72AB46;
@@ -27,15 +28,14 @@ const ProgressOfHabits = styled.div`
     margin-top:2em;
 `;
 
-
+/*
 const ChekProgress = styled.input`
-
 `;
 const ImgSlider = styled.img`
     position: relative;
     left:0;
     width: 4em;
-`;
+`;*/
 const ChekBoxText = styled.a`
     margin-left: 1em;
     color: #696969;
@@ -44,10 +44,12 @@ const ChekBoxText = styled.a`
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;`;
-    const SliderDiv = styled.div`
-    width: 30em;
+    line-height: normal;
 `;
+/*
+const SliderDiv = styled.div`
+    width: 30em;
+`;*/
 const ChekBoxDiv = styled.div`
 padding: 0.5em;
 margin-right: auto;
@@ -84,34 +86,28 @@ flex-direction: column;
 export default function ChekList(){
     return(
         <div>
-            
-            <ChekListHabits>ЧЕК-ЛИСТ ПРИВЫЧЕК</ChekListHabits>
-            <SliderDiv class="slider">
-                <ChekProgress type="range" min="0" max="200" value="100"/>
-                <ImgSlider src={LogoRed}/>
-                {scoreHuman}
-            </SliderDiv>
+            <Header></Header>
             <div>
-                <BoxHow>
-                    <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
-                    {ViewPrivichki}
-                </BoxHow>
-                <BoxHow>
-                    <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
-                    {ViewPrivichki}
-                </BoxHow>
-                <BoxHow>
-                    <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
-                    {ViewPrivichki}
-                </BoxHow>
-                <BoxHow>
-                    <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
-                    {ViewPrivichki}
-                </BoxHow>
-            </div> 
-          
-            
-           
+                <ChekListHabits>ЧЕК-ЛИСТ ПРИВЫЧЕК</ChekListHabits>
+                <div>
+                    <BoxHow>
+                        <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
+                        {ViewPrivichki}
+                    </BoxHow>
+                    <BoxHow>
+                        <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
+                        {ViewPrivichki}
+                    </BoxHow>
+                    <BoxHow>
+                        <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
+                        {ViewPrivichki}
+                    </BoxHow>
+                    <BoxHow>
+                        <ProgressOfHabits>Прогресс привычек</ProgressOfHabits>
+                        {ViewPrivichki}
+                    </BoxHow>
+                </div> 
+            </div>
         </div>
     );
 }

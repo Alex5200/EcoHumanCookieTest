@@ -3,8 +3,7 @@ import './App.css'
 import styled from 'styled-components'
 import Cookies from 'universal-cookie';
 import Logos from './assets/logo.png';
-
-
+import Header from './header/header.jsx';
 
 const Maindiv = styled.div`
 display: flex;
@@ -65,7 +64,7 @@ function TougleRadioButton(text, thee){
 
   } 
   return(
-  <div>
+  <div key={thee + 'yes'}>
 
       <h3>{text}</h3>
       <Rowdiv>
@@ -101,7 +100,7 @@ function App() {
     if(seeCookie){ 
       return(
       <div id="cookie_notification">
-      <p>Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</p>
+      <p className='cookie_text'>Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</p>
       <button className={"button cookie_accept"} onClick={handleClick}>Принять</button>
       <img className={"Logoimg"}  src={Logos}/>
     </div>)
@@ -109,13 +108,17 @@ function App() {
   }
   return (
     <div>
-      {cookieNotification()}
-     
-      <Maindiv> 
-        <h1>Score {score}</h1>
-        {renderList}
-      </Maindiv>
+      <Header></Header>
+      <div>
+        {cookieNotification()}
+      
+        <Maindiv> 
+          <h1>Score {score}</h1>
+          {renderList}
+        </Maindiv>
+    </div>
    </div>
+
   )
 }
 

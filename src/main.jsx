@@ -6,6 +6,6 @@ import ChekList from "./chekList/ChekList.jsx";
 import App from "./App.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <CookiesProvider defaultSetOptions={{ path: "/" }}>
-    <Test />
+    <ChekList />
   </CookiesProvider>,
 );

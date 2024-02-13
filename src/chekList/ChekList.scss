@@ -1,60 +1,57 @@
-
 :root {
-    --form-control-color: #72AB46;
-    --form-control-disabled: #EDCFC5;
-  }
+  --form-control-color: #72ab46;
+  --form-control-disabled: #b4d21c;
+}
 
-  input[type="range"]{
-    -webkit-appearance: none;
-    &::-webkit-slider-thumb{
-      background: url('../assets/logoRed.png') ;
-      border: none;
-    }
-    accent-color: #72AB46;
-    position: absolute;
-    width: 25em;
+input[type="range"] {
+  -webkit-appearance: none;
+  &::-webkit-slider-thumb {
+    background: url("../assets/logoRed.png");
+    border: none;
   }
+  accent-color: #72ab46;
+  position: absolute;
+  width: 25em;
+}
 input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-    /* For iOS < 15 */
-    background-color: var(--form-background);
-    margin: 0;
-  
-    font: inherit;
-    color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 0.15em;
-    border-color: #EDCFC5;
-    display: inline-grid;
-    place-content: center;
-  }
-  
-  input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-  
-  }
-  
-  input[type="checkbox"]:checked::before {
-    transform: scale(1);
-  }
-  
-  input[type="checkbox"]:focus {
-    outline: max(2px, 0.15em) solid currentColor;
-    outline-offset: max(2px, 0.15em);
-  }
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  margin: 0;
 
-  input[type="checkbox"]:disabled {
-    --form-control-color: var(--form-control-disabled);
-  
-    color: var(--form-control-disabled);
-    cursor: not-allowed;
-  }
-  
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  border-color: #b4d21c;
+  display: inline-grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}

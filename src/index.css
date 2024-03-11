@@ -1,19 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap');
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+ 
 }
 @font-face {
   font-family: 'Cygre-Black';
@@ -22,11 +10,7 @@
   font-style: normal;
 }
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+ 
 }
 
 h1 {
@@ -59,7 +43,7 @@ h1 {
 }
 @font-face {
     font-family: 'Gilroy-Medium';
-    src: url('../fonts/Gilroy-Medium.ttf');
+    src: url('./assets/fonts/Gilroy-Medium.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -83,7 +67,6 @@ top: 20rem;
 right: 20em;
 }
 body{
-overflow-x: hidden;
 background-color: #FFFEF5;
 z-index: 1000;
 }
@@ -112,7 +95,6 @@ background: #EEBDAD;
 }
 
 .call-button a:visited{
-color: var(--text-color);
 }
 
 .phone-link-container{
@@ -154,17 +136,25 @@ max-height: 50px;
 
 .flex{
 display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
 gap: var(--gap, 1rem);
 }
-
+.logoImg-container{
+    display: flex;
+    
+}
 .logoImg{
-margin: 1rem;
+margin-top: 1rem;
 margin-left: 2rem
 }
 
 .primary-header{
 align-items: center;
 justify-content: space-between;
+
+
 }
 
 /* .container{
@@ -179,15 +169,16 @@ display: none;
 text-decoration: none;
 letter-spacing: 0.5px;
 font-family: "Gilroy-Medium";
+color: #696969;
 font-size: 20px;
-background: #ffffff;
 padding: 10px;
 border-radius: 6px;
 transition: background 1s;
 }
 
 .primary-navigation a:hover{
-background: #EEBDAD;
+margin-right: 1em;
+color: #B4D21C;
 
 }
 
@@ -197,7 +188,6 @@ color: #fff;
 
 a:visited {
 text-decoration: none;
-color: var(--text-color);
 }
 
 .clinic-image__container {

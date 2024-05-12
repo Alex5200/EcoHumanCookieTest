@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap');
 
 :root {
- 
+    background-color: #FFFEF5;
 }
 @font-face {
   font-family: 'Cygre-Black';
@@ -23,7 +23,7 @@ h1 {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #FFFEF5;
   }
 
  

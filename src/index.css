@@ -12,7 +12,16 @@
 body {
  
 }
-
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1em;
+    width: 70%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: stretch;
+    margin-top: 2em;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

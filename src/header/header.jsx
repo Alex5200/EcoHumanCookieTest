@@ -5,6 +5,8 @@ const Texts = styled.div`
     margin-top:25px
 `
 const TextsA = styled.a`
+    position: relative;
+    top: 0.4em;
     color: #4A860B;
     font-size: 26px;
     font-family: Gilroy-Medium;

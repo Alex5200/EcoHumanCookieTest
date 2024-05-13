@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "../header/header";
 import styled from "styled-components";
 import './testFilter.css';
-import Krest from './крестик выхода.png'
+// import Krest from './крестик выхода.png'
 const TestDiv = styled.div`
     margin-top: 10%;
     margin-left: 15%;
@@ -82,7 +82,6 @@ const ButtonsAlerts = styled.button`
 const ButtonSubmit = styled.button`
     position: absolute;
     bottom: 0;
-    padding: 1em;
     background-color: #4A860B;
     color: white;
     border: 0px solid;
@@ -186,9 +185,9 @@ export default function TestFilter(){
     const Edits = () =>{
         setAlert(true);
     }
-   const Tests = () =>{
+    const Tests = () =>{
         setTests(true)
-   }
+    }
     function CheksText(){
         
         if(!alert){       

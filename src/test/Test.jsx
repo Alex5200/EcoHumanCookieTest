@@ -5,7 +5,7 @@ import CookiesAlert from "../cookieAlert/cookie";
 import { question } from "./quests"; // Хранение вопросов для теста
 import LogoRed from "../assets/logoRed.png";
 import LogoGreen from "../assets/LogoGreen.png";
-
+import Header from "../header/header";
 import {
   Maindiv,
   ColumnDivQuest,
@@ -68,8 +68,8 @@ function Test() {
   return (
     <div>
       <CookiesAlert />
-      <IconsBackRed src={LogoRed} />
-      <IconsBackGrenn src={LogoGreen} />
+      
+      <Header></Header>
       <Maindiv>
         <TextMain>СОБЛЮДЕНИЕ ЗДОРОВОГО ОБРАЗА</TextMain>
         <AboutText>Проверка на соблюдение здорового образа жизни</AboutText>

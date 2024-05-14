@@ -1,18 +1,21 @@
+import styled from "styled-components";
 import ImgLogo from "../assets/icon/logo.png"
 import { useState } from 'react';
-/*
-navToggle.addEventListener("click", () => {
-    const visibility = primaryNav.getAttribute('data-visible');
-    if (visibility === "false"){
-        primaryNav.setAttribute('data-visible', true);
-        navToggle.setAttribute('aria-expanded', true)
-    } else {
-        primaryNav.setAttribute('data-visible', false);
-        navToggle.setAttribute('aria-expanded', false);
-    }
-}); */
-
-
+const Texts = styled.div`
+    margin-top:25px
+`
+const TextsA = styled.a`
+    position: relative;
+    top: 0.1em;
+    color: #4A860B;
+    font-size: 26px;
+    font-family: Gilroy-Medium;
+`
+const StrogColor = styled.strong`
+    color: #B4D21C;
+    font-size: 26px;
+    font-family: Cygre-Black;
+`
 export default function Header(){
     const [stateNav, setStateNav] = useState(false);
     function clicks(){
@@ -24,23 +27,23 @@ export default function Header(){
             return (
             <nav className="navigation">
                 <ul id="primary-navigation" data-visible="true" className="primary-navigation flex">
-                <li className="navigation__list-item active">
-                    <a style={{color: "#696969"}} href="#main">
+                <li className="navigation__list-item">
+                    <a href="#main">
                       здоровье
                     </a>
                 </li>
                 <li className="navigation__list-item">
-                    <a style={{color: "#696969"}} href="#cure">
+                    <a href="#cure">
                       тесты
                     </a>
                 </li>
                 <li className="navigation__list-item">
-                    <a style={{color: "#696969"}} href="#license">
+                    <a href="#license">
                       ресуры
                     </a>
                 </li>
                 <li className="navigation__list-item">
-                    <a  style={{color: "#72AB46"}}>
+                    <a>
                       чек лист привычек
                     </a>
                 </li>
@@ -51,23 +54,23 @@ export default function Header(){
         return(
             <nav className="navigation"> 
             <ul id="primary-navigation" data-visible="false" className="primary-navigation flex">
-                <li className="navigation__list-item active">
-                    <a style={{color: "#696969"}} href="#main">
+                <li className="navigation__list-item ">
+                    <a href="#main">
                     здоровье
                     </a>
                 </li>
                 <li className="navigation__list-item">
-                    <a style={{color: "#696969"}} href="#cure">
+                    <a href="#cure">
                     тесты
                     </a>
                 </li>
                 <li className="navigation__list-item">
-                    <a style={{color: "#696969"}} href="#license">
+                    <a href="#license">
                     ресуры
                     </a>
                 </li>
                 <li className="navigation__list-item">
-                    <a  style={{color: "#72AB46"}}>
+                    <a >
                     чек лист привычек
                     </a>
                 </li>
@@ -86,10 +89,16 @@ export default function Header(){
             <button className="mobile-nav-toggle" onClick={clicks} aria-controls="primary-navigation" aria-expanded="false"><span className="sr-only"></span></button>)
         }
     }
+
     return(
         <header className="primary-header flex">
             <div className="logoImg-container">
-                <img src={ImgLogo}  loading="lazy" alt="logoImg" className="logoImg" />
+                <div>
+                    <img src={ImgLogo}  loading="lazy" alt="logoImg" className="logoImg" />
+                </div>
+                <Texts href="main.html">
+                    <TextsA>ЭКО<StrogColor>СОЗНАНИЕ</StrogColor></TextsA>
+                </Texts>
             </div>
             {visibilityButton()}        
             {visibility()}

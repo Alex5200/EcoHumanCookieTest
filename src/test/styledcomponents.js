@@ -48,7 +48,6 @@ export const TextQuest = styled.a`
 `;
 export const DivQuest = styled.div`
   width: 40%;
-  margin-right: 60%;
 `;
 export const Answer = styled.label`
   color: #696969;
@@ -95,4 +94,7 @@ export const AboutText = styled.a`
   left: 20%;
   margin-right: 40%;
   margin-bottom: 10%;
+  text-align: center;
+  margin-left: auto;
+  margin-right:auto;
 `;

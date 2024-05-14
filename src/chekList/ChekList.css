@@ -17,6 +17,10 @@
     font-weight: normal;
     font-style: normal;
 }
+body{
+    background-color: #FFFEF5;
+
+}
 *{
 margin: 0;
 padding:0; 
@@ -27,6 +31,8 @@ font-family: "Manrope", sans-serif;
 /* outline: 1px solid red; */
 --text-color: #72AB46;
 font-weight: 400;
+background-color: #FFFEF5;
+
 }
 .logo-red{
 z-index: -1;

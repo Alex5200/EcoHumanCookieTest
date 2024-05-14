@@ -1,8 +1,9 @@
+
+.false{
+    color: #4A860B;
+    background: none;
+}
 .true{
     background-color: #4A860B;
     color: white;
-}
-.false{
-    color: #4A860B;
-    background-color: #FFFEF5;
 }

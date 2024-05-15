@@ -146,12 +146,13 @@ export default function TestFilter(){
     const [live, setLive] = useState(false);
     const [tests, setTests] = useState(false);
     const [nameTest, setNameTest] = useState("");
-    const hrefTest = "";
+    const [idTest, setIdTest] = useState("");
     const Edits = () =>{
         setAlert(true);
     }
-    function Tests( testName){
+    function Tests(testName, testId){
         setNameTest(testName);
+        setIdTest(testId);
         setTests(true)
     }
     function CheksText(){
@@ -186,28 +187,28 @@ export default function TestFilter(){
                         {MainCards.map(function(item){
                             if(live && item.tag.search("live")){    
                                 return(
-                                    <DivCard key={Date.now} onClick={Tests}>
+                                    <DivCard key={Date.now} onClick={() => Tests(item.title, item.id)}>
                                         <Header3 onClick={Tests}>{item.title}</Header3>
                                         <Textcard>{item.text}</Textcard>
                                     </DivCard>
                                 )
                             }else if(smoke && item.tag.search("smoke")){
                                 return(
-                                    <DivCard key={Date.now} onClick={Tests}>
+                                    <DivCard key={Date.now} onClick={() => Tests(item.title, item.id)}>
                                         <Header3>{item.title}</Header3>
                                         <Textcard>{item.text}</Textcard>
                                     </DivCard>
                                 )
                             }else if (habits && item.tag("habits")){
                                 return(
-                                    <DivCard key={Date.now} onClick={Tests}>
+                                    <DivCard key={Date.now} onClick={() => Tests(item.title, item.id)}>
                                         <Header3 onClick={Tests}>{item.title}</Header3>
                                         <Textcard>{item.text}</Textcard>
                                     </DivCard>
                                 )
                             }else if (!live && !smoke && !sleep && !habits){
                                 return(
-                                    <DivCard key={Date.now} onClick={() => Tests(item.title)}>
+                                    <DivCard key={Date.now} onClick={() => Tests(item.title, item.id)}>
                                         <Header3 onClick={Tests}>{item.title}</Header3>
                                         <Textcard>{item.text}</Textcard>
                                     </DivCard>
@@ -222,6 +223,7 @@ export default function TestFilter(){
             <DivTest>
                 <IconExit onClick={() => {setTests(false)}} src={Krest}/>
                 <HeaderTest>{nameTest}</HeaderTest>
+                <div className="testometrika_widget" id={idTest}></div>
             </DivTest>)
         }
         else{
